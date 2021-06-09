@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="http://code.jquery.com/jquery-3.5.1.js"
+			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			crossorigin="anonymous"
+		></script>
+		<script src="jquery.overlayhole.js"></script>
+
+		<title>Document</title>
+	</head>
+	<body style="background-color: #00b7d7; color: white">
+		<button id="cmdShow" class="btn btn-primary">Show</button>
+		<button id="cmdHide" style="display: none" class="btn btn-danger">
+			Hide
+		</button>
+
+		<div class="content">
+			<p>
+				Wil jij ook kosten besparen? De Support app biedt jou de oplossing om je
+				processen efficiënter in te richten. Dit leidt tot minder
+				telefoonverkeer. Daarnaast kun je door de digitalisering je personeel op
+				een slimmere en efficiëntere manier inzetten. Dit resulteert in een
+				forse besparing op personeelskosten.
+			</p>
+			<div class="foto">
+				<img src="Opgelost.png" height="275px" ; />
+			</div>
+
+			<p>
+				De Support App biedt de mogelijkheid tot het ontwikkelen van jouw eigen
+				digitale platform. Het is toepasbaar op de branche van je organisatie en
+				kan helemaal naar jouw wens worden samengesteld. Jouw bedrijfslogo’s,
+				huisstijl en kleuren kunnen op jouw verzoek door ons worden toegevoegd.
+				Bekijk ons portfolio voor een impressie.
+			</p>
+			<div class="foto1">
+				<img src="Chats.png" height="275px" ; />
+			</div>
+		</div>
+
+		<script>
+			$.overlayhole.init(); //initializes the library
+			$.overlayhole.targets = $(".content > .foto").toArray(); //specifices the targets
+
+			$("#cmdShow").click(function () {
+				//function to hide the targets
+				$(this).hide();
+				$("#cmdHide").show();
+				$.overlayhole.show();
+			});
+
+			$("#cmdHide").click(function () {
+				//function to show the targets again
+				$(this).hide();
+				$("#cmdShow").show();
+				$.overlayhole.hide();
+			});
+		</script>
+	</body>
+</html>
